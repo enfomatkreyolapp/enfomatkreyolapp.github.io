@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- bootstrap links -->
+   
+    <!-- fontAweosum -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- googleFonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
+</head>
+
+<body>
+    <div class="sigform">
+        <div class="formsignup">
+            <h3>Connectez-vous !!!</h3>
+            <hr>
+            <form autocomplete="off" class="form-group" id="signup-form">
+                <div class="input">
+                    <input type="text" class="form-control" id="name" placeholder="Je m'appelle Ruban et Vous?" required>
+                </div>
+                <div class="input">
+                    <input type="email" class="form-control" id="email" placeholder="Entrer votre Emial" required>
+                </div>
+                <div class="input inputFlex">
+                    <p>Code de votre pays</p>
+                    <select name="Code" id="code" onChange="update()">
+                        <option></option>
+                        <option value="+229">Benin (+229)</option>
+                        <option value="+257">Burundi (+257)</option>
+                        <option value="+226">Burkina Faso (+226)</option>
+                        <option value="+237">Cameroon (+237)</option>
+                        <option value="+1">Canada (+1)</option>
+                        <option value="+238">Cape Verde (+238)</option>
+                        <option value="+236">Central African Republic (+236)</option>
+                        <option value="+242">Congo (+242)</option>
+                        <option value="+242">Congo, the Democratic Republic of the (+242)</option>
+                        <option value="+225">Cote D'Ivoire (+225)</option>
+                        <option value="+1809">Dominican Republic (+1809)</option>
+                        <option value="+298">Faroe Islands (+298)</option>
+                        <option value="+594">French Guiana (+594)</option>
+                        <option value="+509">Haiti (+509)</option>
+                        <option value="+352">Luxembourg (+352)</option>
+                        <option value="+853">Macao (+853)</option>
+                        <option value="+389">Macedonia, the Former Yugoslav Republic of (+389)</option>
+                        <option value="+261">Madagascar (+261)</option>
+                        <option value="+223">Mali (+223)</option>
+                        <option value="+377">Monaco (+377)</option>
+                        <option value="+227">Niger (+227)</option>
+                        <option value="+234">Nigeria (+234)</option>
+                        <option value="+262">Reunion (+262)</option>
+                        <option value="+250">Rwanda (+250)</option>
+                        <option value="+268">Swaziland (+268)</option>
+                        <option value="+228">Togo (+228)</option>
+                        <option value="+690">Tokelau (+690)</option>
+                        <option value="+676">Tonga (+676)</option>
+                        <option value="+260">Zambia (+260)</option>
+                        <option value="+263">Zimbabwe (+263)</option>
+                      </select>
+                </div>
+                <div class="input inputFlex">
+                    <input type="text" class="form-control" id="phone" placeholder="Votre Numero de téléphone"  required>
+                </div>
+                <div class="input">
+                    <input type="password" class="form-control" id="password" placeholder="Enter un mot de passe" required minlength="6">
+                </div>
+                <input type="text" id="rcoins" value="0" style="display: none;">
+                <button type="submit"  class="btn btn-primary">REGISTER</button>
+            </form>
+            <p>J'ai deja un compte <br><br><strong><a href="login.html">Connectez-vous!!!</a></strong></p>
+        </div>
+    </div>
+</body>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+    <script>
+         const firebaseConfig = {
+            apiKey: "AIzaSyBdR6bkRWKLArTX_ASA6wDhMmz4gMxx3Go",
+            authDomain: "enfomakreyol.firebaseapp.com",
+            projectId: "enfomakreyol",
+            storageBucket: "enfomakreyol.appspot.com",
+            messagingSenderId: "1012107743957",
+            appId: "1:1012107743957:web:4420430b0f9aebfbadc85c",
+            measurementId: "G-SQ9HKZV3J6"
+  };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // signup
+const signupForm = document.getElementById("signup-form");
+signupForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = signupForm['name'].value;
+    const email = signupForm['email'].value;
+    const password = signupForm['password'].value;
+    const phone = signupForm['phone'].value;
+    const rcoins = signupForm['rcoins'].value;
+    // console.log(name, email, password, rcoins);
+    signupForm.reset();
+    auth.createUserWithEmailAndPassword(email, password).then((cred) => {
+        // console.log(cred);
+        return db.collection('users').doc(cred.user.uid).set({
+            Name: name,
+            Email: email,
+            Password: password,
+            Phone: phone,
+            Rcoins: rcoins
+        }).then(() => {
+            console.log('success');
+            location = "login.html";
+        }).catch(err => {
+            console.log(err.message);
+            const signupError = document.getElementById('signupError');
+            signupError.innerText = err.message;
+        })
+    }).catch(err => {
+        console.log(err.message);
+        const signupError2 = document.getElementById('signupError');
+        signupError2.innerText = err.message;
+    })
+})
+    </script>
+
+<script type="text/javascript">
+    function update() {
+        var select = document.getElementById('code');
+        var option = select.options[select.selectedIndex];
+
+        document.getElementById('phone').value = option.value;
+    }
+
+    update();
+</script>
+
+
+</html>

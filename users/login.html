@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="login.css">
+    <!-- bootstrap links -->
+   
+    <!-- fontAweosum -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- googleFonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Tangerine|Lato|Gamja+Flower|Open+Sans|Roboto+Slab|Indie+Flower|Lobster|Open+Sans|Kosugi+Maru">
+</head>
+
+<body>
+    <div class="login-box">
+       <div class="logForm">
+        <h3>Vous Connectez</h3><hr>
+       <h4 id="username"></h4>
+        <form autocomplete="off" class="form-group" id="login-form">
+            <div class="input">
+                <input type="email" id="login-email" class="form-control" placeholder="Entrer votre Email" required>
+            </div><br>
+            <div class="input">
+                <input type="password" id="login-password" class="form-control" placeholder="Entrer votre Mot de passe" required>
+            </div><br>
+           <center> <button type="submit" class="btn btn-success btn-block">Vous Connectez-vous!!!</button></center>
+            <div class="container error" id="loginError"></div>
+        </form>
+        <p><strong>Creer votre compte ici ...</strong></p>
+        <center><button><a href="/users/signup.html">Je veux créer mon compte</a></button></center>
+       </div>
+    </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+    <script>
+         const firebaseConfig = {
+            apiKey: "AIzaSyBdR6bkRWKLArTX_ASA6wDhMmz4gMxx3Go",
+            authDomain: "enfomakreyol.firebaseapp.com",
+            projectId: "enfomakreyol",
+            storageBucket: "enfomakreyol.appspot.com",
+            messagingSenderId: "1012107743957",
+            appId: "1:1012107743957:web:4420430b0f9aebfbadc85c",
+            measurementId: "G-SQ9HKZV3J6"
+  };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+        //const db = firebase.database();
+
+        const loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const loginEmail = loginForm['login-email'].value;
+    const loginPassword = loginForm['login-password'].value;
+    const username = document.getElementById('username');
+    // console.log(loginEmail, loginPassword);
+    auth.signInWithEmailAndPassword(loginEmail, loginPassword).then(() => {
+        console.log('login success');
+        location = "/index.html";
+        // retriving username
+        firebase.auth().onAuthStateChanged((user) =>  {
+            const username = document.getElementById('username');
+            var user = firebase.auth().currentUser;
+            if (user) {
+                var uid = user.uid;
+                fs.collection('users', JSON.stringify).doc(user.uid).get().then((snapshot) => {
+                    console.log(snapshot.data().Name);
+                    username.innerText = snapshot.data().Name;
+                })
+            }
+            else {
+                console.log('user is not signed in to retrive username');
+            }
+        })
+    }).catch(err => {
+        const loginError = document.getElementById("loginError");
+        loginError.innerText = err.message;
+    })
+})
+
+
+firebase.auth().onAuthStateChanged((user) => {
+    var user = firebase.auth().currentUser;
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      //https://firebase.google.com/docs/reference/js/firebase.User
+      var uid = user.uid;
+      fs.collection('users').doc(user.uid).get().then((snapshot) => {
+        console.log(snapshot.data().Name);
+        username.innerText = snapshot.data().Name;
+        window.location = "/index.html";
+    })
+    } else {
+      // User is signed out
+      localStorage.setItem('username', user)
+      console.log('user is not signed in to retrive username');
+    }
+  });
+    </script>
+</body>
+
+</html>

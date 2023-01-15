@@ -1,0 +1,418 @@
+#suivre{
+  display: none;
+}
+section{
+  animation: fadein 2s;
+}
+@keyframes fadein{
+  1%{
+    opacity: 0;
+  }
+  90%{
+    opacity: 0,5;
+  }
+  100%{
+    opacity: 1;
+  }
+  
+}
+/*video du jours de l'application*/
+@media (max-width: 800px){
+  #videoHome{
+    display: none;
+  }
+  .video-player {
+    width: 100%;
+    max-width: 750px;
+    position: relative;
+    font-size: 0;
+    overflow: hidden;
+   
+  }
+  .video {
+    width: 100%;
+  }
+  .controls__button {
+    background: none;
+    border: 0;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    max-width: 50px;
+  }
+  .controls__slider {
+    width: 10px;
+    height: 30px;
+  }
+  .controls {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    flex-wrap: wrap;
+    background: rgba(0,0,0,0.1);
+    transform: translateY(0);
+  }
+  .controls > * {
+    flex: 1;
+  }
+  .progress {
+    flex: 10;
+    position: relative;
+    display: flex;
+    flex-basis: 100%;
+    height: 5px;
+    /* background: rgba(0,0,0,0.5); */
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    height: 15px;
+  }
+  .progress__filled {
+    width: 50%;
+    background: #00ff40;
+    flex: 0;
+    flex-basis: 0%;
+  }
+  
+  input[type=range] {
+    background: transparent;
+    width: 100%;
+    margin: 0 5px;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.8);
+    border-radius: 4px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    height: 0.9rem;
+    width: 0.9rem;
+    border-radius: 50px;
+    background: #00ff40;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -3.5px;
+  }
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.8);
+    border-radius: 4px;
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 0.9rem;
+    width: 0.9rem;
+    border-radius: 50px;
+    background: #00ff40;
+    cursor: pointer;
+    margin-top: -3.5px;
+  }
+}
+
+/*card home*/
+@media (max-width: 800px){
+  .backHome{
+    background-image: url(/images/imgBack.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+  }
+
+  .detailsHome{
+    border-radius: 10px;
+    background: rgb(1, 1, 56);
+    color: white;
+    padding: 10px;
+  }
+
+  .detailsHome h1{
+    text-transform: uppercase;
+    font-size: 6vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px 10px 5px 2px;
+  }
+  .detailsHome h2{
+    text-transform: capitalize;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .detailsHome p{
+    font-size: 3.5vw;
+    margin-bottom: 2px;
+  }
+  .detailsHome button{
+    border-radius: 10px;
+    padding:2px 10px 2px 10px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+    color: black;
+    line-height: bold;
+  }
+}
+
+
+@media (max-width: 800px){
+
+  .card hr{
+    width: 70%;
+    margin:2px auto 10px;
+    border: blue 2px dashed;
+  }
+  .card h1{
+    color: rgb(0, 47, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 2px;
+  }
+  .souCard{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .souCard .items{
+    border: 1px solid blue;
+    margin: 5px;
+    width: 100%;
+    min-width: 80px;
+    border-radius: 10px;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+  }
+  .souCard .items div{
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    margin:10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 2px 1px rgba(17, 0, 255, 0.75);
+  }
+}
+
+
+
+
+
+@media (max-width: 800px){
+  .card-home{
+    background: black;
+  }
+  .carde
+    {
+     padding: 10px;
+    }
+
+    .carde hr{
+      margin: 2px auto 10px;
+      width: 90%;
+    }
+
+    .carde .desc{
+      width: 100%;
+      display: flex;
+      background-color: rgb(134, 99, 99);
+    }
+
+    .carde .desc h2{
+      font-size: 4vw;
+    }
+    .carde .desc ul{
+      width: 100%;
+      max-width: 100%;
+      margin-left: 10px;
+    }
+
+    .carde .desc div{
+      background-color: antiquewhite;
+      cursor: pointer;
+      color: red;
+      font-size: 20vw;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .carde .desc div:hover{
+      background: rgb(255, 94, 0);
+    }
+    .carde ul li{
+      margin: 0px;
+      padding: 0px;
+      font-size: 3vw;
+      line-height: normal;
+    }
+    .carde .item ul p{
+      font-size: 3vw;
+      line-height: normal;
+      padding: 0px;
+      text-align: left;
+  
+    }
+    .carde .img{
+      width: 10%;
+      background-color: white;
+    }
+
+    .carde .item{
+      background-color: white;
+      border: blue 1px solid;
+      border-radius: 5px;
+      height: auto;
+      margin-top: 3px;
+      margin: 0px;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+    .carde .item .i {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:5px auto;
+      border: 1px solid red;
+      padding: 4px;
+      border-radius: 30px;
+    }
+    .carde .item .i .fa{
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .carde .item h1{
+      font-size: 4vw;
+      text-align: center;
+      margin: 2px;
+    }
+
+    .carde .item p{
+      font-size: 12px;
+      text-align: center;
+      line-height: normal;
+      margin-bottom: 2px;
+      margin-top: 2px;
+    }
+
+    .carde .item button{
+      margin-top: 3px;
+      padding: 3px;
+      font-size: 3vw;
+    }
+
+    .card-home #item{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      display: none;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: blue 1px solid;
+      border-radius: 5px;
+      height: auto;
+      margin-top: 3px;
+      margin: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+    }
+
+    .card-home #item h1{
+      font-size: 4vw;
+      text-align: center;
+      color: blue;
+    }
+
+    .card-home #item p{
+      font-size: 4vw;
+      text-align: center;
+      color: blue;
+    }
+
+    .card-home button{
+      width: 100%;
+    }
+    
+}
+
+@media (max-width: 800px){
+  .fcard{
+    padding: 5px;
+  }
+  .fcard .fi{
+    background-color: antiquewhite;
+    box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    height: max-content;
+    width: 100%;
+    height: auto;
+  }
+  .fcard .fitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-right: 10px;
+  }
+  .fcard .fitem ul{
+    width: 100%;
+    margin-left: 10px;
+  }
+  .fcard .fitem .image{
+    max-height: 20%;
+    max-width: 30%;
+    margin: 10px;
+    font-size: 20vw;
+    color: rgb(255, 166, 0);
+    border: 1px dashed;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 1px 0px 5px 0px rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fcard .fitem .image .fa-folder {
+    height: max-content;
+    animation-name: example;
+    animation-duration: 4s;
+    cursor: pointer;
+  }
+
+  .fcard ul li{
+    margin: 0px;
+    padding: 0px;
+    font-size: 4vw;
+    line-height: normal;
+  }
+
+
+  .fcard .fitem .image .fa-folder:hover{
+    border: lime dashed 2px;
+    box-shadow: 1px 0px 5px 0px rgba(9, 255, 0, 0.75);
+  }
+  
+  @keyframes example {
+    0%   {color: rgb(253, 165, 2);}
+    25%  {color: rgb(0, 204, 255);}
+    50%  {color: blue;}
+    100% {color: green;}
+  }
+}
+
+
+

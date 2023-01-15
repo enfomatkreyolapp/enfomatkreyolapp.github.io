@@ -1,0 +1,118 @@
+@media (max-width: 800px){
+    #formulaire{
+        background: white;
+        width: 90%;
+        padding: 1px;
+        display: none;
+        margin: 10px auto;
+        box-shadow: 0px 0px 5px 0px blue;
+    }
+    #formulaire form{
+        padding: 5px;
+        margin: auto;
+        width: 98%;
+    }
+    .formclose{
+      color: red;
+      font-size: 5.5vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      padding: 2px;
+      cursor: pointer;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 255, 0.37);
+    }
+    #formulaire .image{
+      width: 50%;
+      overflow: hidden;
+      margin:10px auto;
+      padding: 1px 10px 1px 10px;
+      border-radius: 15px;
+    }
+
+    #formulaire h1{
+      font-size: 6.2vw;
+      text-align: center;
+    }
+    #formulaire form p{
+      font-size: 5vw;
+    }
+    .form .input{
+        border: 1px solid blue;
+        margin: 5px;
+        overflow: hidden;
+    }
+    /* Full-width input fields */
+    #formulaire input[type=text], #formulaire input[type=email] {
+    width: 100%;
+    padding: 10px;
+    margin: 0px 0 0px 0;
+    display: inline-block;
+    background: none;
+ 
+  }
+
+  #code{
+    width: 50px;
+    padding: 10px;
+    margin: 0;
+    display: inline-block;
+    border: none;
+    background: none;
+  }
+
+  .input select{
+    width: 100%;
+    padding: 10px;
+    margin: 0px;
+    display: inline-block;
+    border: none;
+    background: none;
+  }
+ 
+  
+  #formulaire input[type=text]:focus, #formulaire input[type=email]:focus {
+    background-color: none;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid black;
+    margin-bottom: 5px;
+  }
+
+  .inputFlex{
+    display: flex;
+  }
+  
+  /* Set a style for the submit/register button */
+  .registerbtn {
+    background-color: #022ff7;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity:1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+}

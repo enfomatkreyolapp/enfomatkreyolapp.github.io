@@ -1,0 +1,194 @@
+body{
+    display: none;
+}
+@media (max-width: 800px){
+    body{
+        display: block;
+        background-color: #FFF;
+        margin: 0px;
+        padding: 0px;
+    }
+    #login{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+    #panel{
+        border: solid #6c757d 3px;
+        border-radius: 3px;
+        margin-top: 50px;
+        display: inline-block;
+        padding: 20px;
+        width: 100%;
+      }
+      #panel * {display: block; padding: 2px;}
+      #panel h2{color: #6c757d;}
+      #panel button{
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        margin-top: 5px;
+      }
+      #panel input{  
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: #6c757d;
+    }
+    #panel label{float: left;}
+    #panel svg{width: 20%;height: 20%;color: #6c757d;}
+}
+
+
+
+@media(max-width: 800px){
+    .login-box{
+        background-image: url('/images/back1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+         background-color: #6c757d;
+         margin: 0px;
+         margin-top: -20px;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+        }
+        
+        .logForm{
+            background: white;
+            width: 100%;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 10px;
+            opacity: 0.8;
+        }
+        .logForm a{
+            text-decoration: none;
+            color: white;
+        }
+        .logForm form{
+            width: 100%;
+            margin: auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+         h3{
+            font-size: 7vw;
+            text-align: center;
+            margin: 3px;
+        }
+        
+        .input{
+            width: 90%;
+            margin:5px auto;
+            padding-right: 15px;
+            overflow: hidden;
+            box-shadow: 0px 2px 5px 0px rgb(0, 72, 255);
+        }
+        
+         input{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        .logForm input:focus{
+            outline: none;
+            border: none;
+        }
+
+        button{
+            width: 95%;
+            padding: 8px;
+            background:rgb(0, 72, 255); 
+            border: none;
+            color: #FFF;
+            margin: 5px;
+            margin-bottom: 1px;
+        }
+
+        .logForm p strong {
+            font-style: italic;
+            width: 100%;
+            margin-top: 2px;
+            text-align: center;
+            color: red;
+        }
+        
+        
+}
+
+
+@media (max-width: 800px){
+    .sigform{
+        background-image: url('/images/back1.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+         background-color: #6c757d;
+         margin: 0px;
+         margin-top: -20px;
+         height: 100vh;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+    }
+
+    .formsignup{
+        background: white;
+        width: 100%;
+        padding: 20px;
+        margin: 5px;
+        border-radius: 10px;
+        opacity: 0.8;
+    }
+    .sigform a{
+        text-decoration: none;
+        color: rgb(252, 0, 0);
+    }
+    .sigform p{
+        text-align: center;
+    }
+    .sigform p strong{
+        text-align: center;
+        font-style: italic;
+        color: red;
+        cursor: pointer;
+        border: 1px solid orangered;
+        margin-top: 10px;
+        padding: 5px;
+    }
+    .sigform p strong:hover{
+        color: orange;
+        border: 1px solid orangered;
+    }
+    .inputFlex{
+        display: flex;
+        align-items: center;
+       
+    }
+
+    .inputFlex p{
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        margin-left: 5px;
+        font-size: 5vw;
+    }
+
+    select{
+        width: 70px;
+        height: 35px;
+        padding: 10px;
+        outline: none;
+        border: none;
+        
+    }
+   
+}

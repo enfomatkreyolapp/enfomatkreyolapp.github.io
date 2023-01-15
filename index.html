@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/login.css">
+  <link rel="stylesheet" href="/css/formulaire.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7979799450178267"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div id="m" onclick="openMenu()"><i class="fa fa-bars"></i></div>
+    <div class="espace"></div>
+    <div class="username"><span id="username">Sitech Info</span></div>
+    <div class="rc" > <span id="rc" >0.000</span><strong>Rc</strong></div>
+  </header>
+  <menu id="nav">
+    <div class="closeMenu" onclick="closeMenu()">x</div>
+    <div class="navHeader">
+
+    </div>
+
+    <ul>
+      <li oncanplay="cblog()"><span class="material-icons">
+        rss_feed
+        </span><a >Création Blog</a></li><hr>
+      <li onclick="html()"><i class="material-icons">code</i><a>Pwogramasyon web</a></li><hr>
+      <li onclick="drive()"><span class="material-icons">add_to_drive</span><a >Swit Goolge Drive</a></li><hr>
+      <li onclick="video()"><span class="material-icons">smart_display</span><a >Video Enfomatik</a></li><hr>
+      <li onclick="article()"><span class="material-icons">newspaper</span><a >Atik sou android</a></li>
+      <li id="log" onclick="log()"></li>
+    </ul>
+  </menu>
+  <main  id="maind" onclick="mainD()">
+    <!---->
+    <div id="home">
+      <section class="home">
+        <div class="backHome">
+          <div class="detailsHome">
+            <h1>Mwen swete ou byenvini</h1>
+            <h2>swiv fomasyon enfomatik an kreyol</h2>
+            <p>
+              <b>
+                Klike pou ka antre nan chanel nou, 
+                konsa ou pap pèdi youn nan fòmasyon nou yo
+              </b>
+            </p>
+            <center><button onclick="reserver()">Rezeve plas paw lan</button></center>
+          </div>
+        </div>
+      </section>
+  
+     <section>
+      <div class="card">
+        <div class="souCard">
+          <div class="items">
+            <div><span><i class="fa fa-android"></i></span></div>
+            <p><strong>Fomasyon</strong></p>
+          </div>
+  
+          <div class="items">
+            <div><span><i class="fa fa-android"></i></span></div>
+            <p><strong>Astis android</strong></p>
+          </div>
+  
+          <div class="items">
+            <div><span><i class="fa fa-android"></i></span></div>
+            <p><strong>dokiman</strong></p>
+          </div>
+        </div>
+      </div>
+     </section>
+  
+      <section class="card-home">
+        <div class="carde">
+          <div class="item desc">
+           <ul>
+            <h1>Fomasyon ki disponib</h1> <hr>
+            <li>iTILIZE ANDROID POU TRAVAY</li>
+             <li>Lè Fòmasyon an : <strong>5h - 6h</strong></li>
+             <li>Aplikasyon : <strong>Telegram</strong></li>
+             <p>Klike sou bouton telegram pou rejwenn nou</p>
+           </ul>
+           <div>
+             <article onclick = "video()">
+              <span><i class="fa fa-youtube-play"></i></span><br>
+             </article>
+          </div>
+          </div>
+        </div>
+      </section>
+  
+      <section>
+        <div class="card">
+          <h1>Abòne ak rezo nou yo</h1><hr>
+          <div class="souCard">
+            <div class="items" onclick = "window.location.href='https://facebook.com/enfomatkreyol';">
+              <div><span><i class="fa fa-facebook"></i></span></div>
+              <p><strong>Facebook</strong></p>
+            </div>
+    
+            <div class="items" onclick = "window.location.href='https://www.youtube.com/c/lepoeteht';">
+              <div><span><i class="fa fa-youtube"></i></span></div>
+              <p><strong>Youtube</strong></p>
+            </div>
+    
+            <div class="items" onclick = "window.location.href='https://t.me/enfomatkreyol';">
+              <div><span><i class="fa fa-send"></i></span></div>
+              <p><strong>Telegram</strong></p>
+            </div>
+          </div>
+        </div>
+       </section>
+    </div>
+
+ <script>document.getElementById('home').style.display ='none';</script>
+    <section id="formation">
+      <div class="fcard">
+       <div class="fi">
+        <h1>Premye pati nan kou a</h1><hr>
+        <div class="fitem">
+          <ul>
+            <li>Definition Android</li>
+            <li>Entèfas android lan</li>
+            <li>Verifikasyon memwa android</li>
+            <li>Kreasyon e koneksyon Gmail</li>
+            <li>Enstale e dezenstale Aplikasyon</li>
+          </ul>
+          <div class="image">
+            <i class="fa fa-folder" onclick = "modil1()"></i>
+          </div>
+        </div>
+       </div>
+      </div>
+    </section>
+
+
+    <section id="videoHome">
+      <div class="video-player">
+        <video class="video">
+          <source
+            src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4"
+            type="video/mp4"
+          />
+          <source
+            src="https://res.cloudinary.com/ifeomaimoh/video/upload/v1650567487/speech_ofvfzq.mp4"
+            type="video/webm"
+          />
+          <p>Your browser doesn't support HTML5 video.</p>
+        </video>
+        <div class="controls">
+          <div class="progress">
+            <div class="progress__filled"></div>
+          </div>
+          <button class="controls__button toggleButton" title="Toggle Play">
+            ►
+          </button>
+          <input
+            type="range"
+            name="volume"
+            class="controls__slider"
+            min="0"
+            max="1"
+            step="0.05"
+            value="1"
+          />
+          <input
+            type="range"
+            name="playbackRate"
+            class="controls__slider"
+            min="0.5"
+            max="2"
+            step="0.1"
+            value="1"
+          />
+          <button class="controls__button" data-skip="-10">« 10s</button>
+          <button class="controls__button" data-skip="25">10s »</button>
+        </div>
+      </div>
+    </section>
+   
+   <!--Formulaire d'inscirption pour la formation -->
+   <div id="formulaire">
+    <div class="formclose" onclick="closeform()">x</div>
+    <form autocomplete="off" method="post" name="google-sheet">
+      <div class="form">
+        <h1>Telechaje modil yo</h1>
+        <p id="msgF">Ranpli fòmilè a, pou telechaje modil sa</p>
+        <hr>
+        <div class="input">
+          <input type="text" placeholder="Votre nom complet" name="Nom" id="nom">
+        </div>
+    
+        <div class="input">
+          <input type="email" placeholder="Entrer votre email" name="Email" id="email" required>
+        </div>
+
+        <div class="input inputFlex">
+          <select name="Code" id="code" onChange="update()">
+            <option>Code de votre pays</option>
+            <option value="+229">Benin (+229)</option>
+            <option value="+257">Burundi (+257)</option>
+            <option value="+226">Burkina Faso (+226)</option>
+            <option value="+237">Cameroon (+237)</option>
+            <option value="+1">Canada (+1)</option>
+            <option value="+238">Cape Verde (+238)</option>
+            <option value="+236">Central African Republic (+236)</option>
+            <option value="+242">Congo (+242)</option>
+            <option value="+242">Congo, the Democratic Republic of the (+242)</option>
+            <option value="+225">Cote D'Ivoire (+225)</option>
+            <option value="+1809">Dominican Republic (+1809)</option>
+            <option value="+298">Faroe Islands (+298)</option>
+            <option value="+594">French Guiana (+594)</option>
+            <option value="+509">Haiti (+509)</option>
+            <option value="+352">Luxembourg (+352)</option>
+            <option value="+853">Macao (+853)</option>
+            <option value="+389">Macedonia, the Former Yugoslav Republic of (+389)</option>
+            <option value="+261">Madagascar (+261)</option>
+            <option value="+223">Mali (+223)</option>
+            <option value="+377">Monaco (+377)</option>
+            <option value="+227">Niger (+227)</option>
+            <option value="+234">Nigeria (+234)</option>
+            <option value="+262">Reunion (+262)</option>
+            <option value="+250">Rwanda (+250)</option>
+            <option value="+268">Swaziland (+268)</option>
+            <option value="+228">Togo (+228)</option>
+            <option value="+690">Tokelau (+690)</option>
+            <option value="+676">Tonga (+676)</option>
+            <option value="+260">Zambia (+260)</option>
+            <option value="+263">Zimbabwe (+263)</option>
+  <option value="+235">Tchad (+235)</option>
+          </select>
+          <input type="text" placeholder="Votre Numero WhatsApp" name="Phone" id="phone" required>
+        </div>
+
+        <div class="input inputFlex" style="display: none;">
+          <select name="Niveau" id="nv">
+            <option>Niveau en Informatique</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Elementaire">Elementaire</option>
+            <option value="Intermediaire">Intermediaire</option>
+            <option value="Avancée">Avancée</option>
+          </select>
+
+          <select name="Sexe" id="sexe">
+            <option>Votre Sexe</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+            <option value="Autres">Autres</option>
+          </select>
+
+          <select name="Reference" id="ref">
+            <option>Votre reference</option>
+            <option value="Whatsapp">Whatsapp</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Autres">Autres</option>
+          </select>
+        </div>
+        <div>
+          <select name="M" id="mod">
+            <option value="M1">M1</option>
+            <option value="M2">M2</option>
+            <option value="M3">M3</option>
+          </select>
+          <input type="text" name="Docs" value="EA">
+
+        </div>
+        <input type="text" name="Reference" value="Blogger" style="display: none;">
+        <button type="submit" id="submit" onclick="submit()" class="registerbtn">Je m'inscris</button>
+      </div>
+    </form>
+    </div>
+
+    </div>
+     <!--Nofictaion pour rafraishir l'application-->
+     <div id="myProgress">
+      <h1><cite>Attendez...</cite></h1>
+      <div id="myBar">10%</div>
+    </div>
+
+    <!--Nofictaion pour connection l'application-->
+    <div id="progressLogin">
+      <h1><cite>Attendez...</cite></h1><hr>
+      <div id="myBar2">10%</div>
+      <p style="display: none;">Connectez-vous</p>
+    </div>
+   
+
+    <!--Espace pour messsage whatsapp-->
+    <div id="whatsapp" class="whatsapp">
+      <div class="btn-close">
+        <div id="closeWhatsapp" onclick="btnWhat()">x</div>
+        <h3>Contactez-nous</h3>
+     </div>
+      <div  class="whainput inp">
+        <i class="fa fa-user"></i>
+        <input type="text" name="value[]" value="" id="name" class="default" >
+      </div>
+      <div class="whainput">
+        <textarea name="" id="msg"></textarea>
+      </div>
+      <button onclick="send_handle()">Envoyer votre message</button>
+    </div>
+
+  </main>
+
+
+  <!--Pied de page de mon application-->
+  <footer>
+    <div class="footer">
+      <div class="li" onclick="aa()">
+        <div class="liImage"><i class="fa fa-shopping-basket"></i></a></div>
+        <div class="liText">Boutique</div>
+
+      </div>
+      <div class="li" onclick="share()">
+        <div class="liImage"><a><i class="fa fa-share"></i></a></div>
+        <div class="liText">Article</div>
+      </div>
+      <div class="li" onclick="home()">
+        <div class="liImage"><i class="fa fa-home"></i></div>
+        <div class="liText">Accueil</div>
+      </div>
+      <div class="li" onclick="reload()">
+        <div class="liImage"><i class="fa fa-refresh"></i></div>
+        <div class="liText">rafraishir</div>
+      </div>
+      <div class="li" onclick="whatspp()">
+        <div class="liImage"><a><i id="lock" class="fa fa-lock"></i><i id="unlock" class="fa fa-whatsapp"></i></a></div>
+        <div class="liText">Question</div>
+      </div>
+    </div>
+   
+  </footer>
+  <div style="display: none;">
+    <a href="pages/videos.html" id="videos"></a>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBdR6bkRWKLArTX_ASA6wDhMmz4gMxx3Go",
+  authDomain: "enfomakreyol.firebaseapp.com",
+  projectId: "enfomakreyol",
+  storageBucket: "enfomakreyol.appspot.com",
+  messagingSenderId: "1012107743957",
+  appId: "1:1012107743957:web:4420430b0f9aebfbadc85c",
+  measurementId: "G-SQ9HKZV3J6"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize variables
+
+
+  const auth = firebase.auth();
+  const fs = firebase.firestore();
+  //const db = firebase.database();
+</script>
+
+  <script src="/js/js.js" defer></script>
+  <script src="/js/App.js" defer></script>
+  <script src="/js/video.js" defer></script>
+  
+  <script>
+   /* let obj = {
+    Name :'ruban',
+    age: 23
+  }
+  
+  firebase.database().ref('users/user1').set(obj)
+  
+        // // read data
+       
+        firebase.database().ref("APP").on("value", (snapshot) => {
+        console.log(snapshot.val());
+        document.getElementById('nvers').innerText= snapshot.val().Nversion;
+        document.getElementById('avers').innerText= snapshot.val().Aversion;
+  
+        var newv =  document.getElementById('nvers').innerText= snapshot.val().Nversion;
+        var holdv =  document.getElementById('avers').innerText= snapshot.val().Aversion;
+  
+        alert(age);
+        if(newv > holdv){
+          document.getElementById('versapp').style.display = 'none';
+        }
+      });
+      document.getElementById('versapp').style.display = 'none';*/
+  </script>
+  
+
+
+
+    <script>
+        // logout
+function log() {
+    auth.signOut();
+    window.location = "/users/login.html";
+}
+    </script>
+
+
+<script type="text/javascript">
+  function update() {
+    var select = document.getElementById('code');
+    var option = select.options[select.selectedIndex];
+    document.getElementById('phone').value = option.value;
+  }
+
+  update();
+</script>
+
+
+
+
+
+</body>
+</html>

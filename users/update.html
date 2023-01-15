@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="myFunction()">
+    <main>
+        <header >s
+            <p id="username"></p>
+            <span ></span>
+            <input type="number" value="" id="rcoins" disabled>
+        </header>
+    </main>
+
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+</body>
+<script type="text/javascript">
+const firebaseConfig = {
+  apiKey: "AIzaSyBdR6bkRWKLArTX_ASA6wDhMmz4gMxx3Go",
+  authDomain: "enfomakreyol.firebaseapp.com",
+  projectId: "enfomakreyol",
+  storageBucket: "enfomakreyol.appspot.com",
+  messagingSenderId: "1012107743957",
+  appId: "1:1012107743957:web:4420430b0f9aebfbadc85c",
+  measurementId: "G-SQ9HKZV3J6"
+  };
+
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const fs = firebase.firestore();
+
+
+
+
+    firebase.auth().onAuthStateChanged((user) => {
+  var user = firebase.auth().currentUser;
+  var log =document.getElementById('log');
+  var rcoins = document.getElementById('rcoins').value;
+  var point = 10;
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    //https://firebase.google.com/docs/reference/js/firebase.User
+
+    var uid = user.uid;
+    fs.collection('users').doc(user.uid).get().then((snapshot) => {
+      console.log(snapshot.data().Name);
+      console.log(snapshot.data().Rcoins);
+      username.innerText = snapshot.data().Name;
+      document.getElementById('rcoins').value = snapshot.data().Rcoins;
+      fs.collection('users').doc(user.uid).update({
+      
+       
+        
+})
+  })
+  } else {
+    // User is signed out
+    localStorage.setItem('username', user)
+    console.log('user is not signed in to retrive username');
+  }
+});
+  </script>
+</html>
