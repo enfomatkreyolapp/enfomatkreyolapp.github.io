@@ -55,7 +55,7 @@
                 konsa ou pap pèdi youn nan fòmasyon nou yo
               </b>
             </p>
-            <center><button onclick="reserver()">Rezeve plas paw lan</button></center>
+            <center><button onclick="pasDisponible()">Rezeve plas paw lan</button></center>
           </div>
         </div>
       </section>
@@ -123,7 +123,7 @@
        </section>
     </div>
 
- <script>document.getElementById('home').style.display ='none';</script>
+ 
     <section id="formation">
       <div class="fcard">
        <div class="fi">
@@ -267,13 +267,13 @@
           </select>
         </div>
         <div>
-          <select name="M" id="mod">
+          <select name="M" id="mod" style="width: 100%;">
             <option value="M1">M1</option>
             <option value="M2">M2</option>
             <option value="M3">M3</option>
           </select>
-          <input type="text" name="Docs" value="EA">
-
+          <input type="text" name="Docs" value="EA" style="display: none;">
+          <a href="https://drive.google.com/drive/folders/10w1TO0iSHN-_VD1b9dz99eA4E7neuFrp" id="lien"></a>
         </div>
         <input type="text" name="Reference" value="Blogger" style="display: none;">
         <button type="submit" id="submit" onclick="submit()" class="registerbtn">Je m'inscris</button>

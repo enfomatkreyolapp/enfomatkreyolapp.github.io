@@ -16,6 +16,11 @@ section{
   }
   
 }
+
+#formation, #formulaire{
+  display: none;
+}
+
 /*video du jours de l'application*/
 @media (max-width: 800px){
   #videoHome{

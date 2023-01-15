@@ -89,8 +89,7 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       //document.getElementById('phone').value = option.value;
       console.log(option);
       if(option.value == "M1"){
-        //window.location = "https://drive.google.com/uc?export=download&id=10w1TO0iSHN-_VD1b9dz99eA4E7neuFrp?usp";
-        
+        location = document.getElementById("lien");
       }else if(option.value == "M2"){
         alert("m2");
       }else if(option.value == "M3"){
@@ -155,6 +154,7 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             htmlp.style.display = 'none';
             homePage.style.display = 'none';
             formulaire.style.display = 'none';
+            formation.style.display = 'block';
           }, 2000);
         }else {
           width++;
